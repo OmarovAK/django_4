@@ -1,0 +1,10 @@
+{% extends 'article/base.html' %}
+
+{% block main %}
+
+    <ul class="list-group">
+        <li class="list-group-item"><a href="{% url 'articles:article_view' %}">Список новостей</a></li>
+        <li class="list-group-item"><a href="{% url 'migrate_app:list_student' %}">Студенты</a></li>
+    </ul>
+
+{% endblock main %}
