@@ -21,6 +21,9 @@ class Scope(models.Model):
     article_id = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='tag_id')
     is_main = models.BooleanField(verbose_name='Основной тег')
 
+    class Meta:
+        ordering = ['tag_id']
+
 
 class Tag(models.Model):
     tag = models.CharField(max_length=256)
@@ -29,7 +32,6 @@ class Tag(models.Model):
     class Meta:
         verbose_name = 'Тег'
         verbose_name_plural = 'Теги'
-
 
     def __str__(self):
         return self.tag

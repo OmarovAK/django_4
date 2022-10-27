@@ -21,9 +21,12 @@
                 {% for tags in post.tag_id.all %}
                     {% if tags.is_main %}
                     <span class="text-white bg-primary border rounded p-1">{{ tags.tag_id }}</span>
-                    {% else %}
-                     <span class="text-white bg-secondary border rounded p-1">{{ tags.tag_id }}</span>
                     {% endif %}
+                 {% endfor %}
+                 {% for tags in post.tag_id.all %}
+                    {% if tags.is_main == False %}
+                     <span class="text-white bg-secondary border rounded p-1 mb-2">{{ tags.tag_id }}</span>
+                 {% endif %}
                 {% endfor %}
             </div>
         {% endfor %}
